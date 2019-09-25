@@ -1,5 +1,17 @@
 {{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
+{{!-- <WelcomePage /> --}}
 {{!-- Feel free to remove this! --}}
 
+{{#bs-dropdown closeOnMenuClick=false as |dd|}}
+  {{#bs-button-group as |bg|}}
+    {{#bg.button}}Start{{/bg.button}}
+    {{#bg.button onClick=(action dd.toggleDropdown)}}^{{/bg.button}}
+  {{/bs-button-group}}
+  {{#dd.menu as |ddm|}}
+    <span>hello</span>
+    {{#ddm.item}}
+      <span>world</span>
+    {{/ddm.item}}
+  {{/dd.menu}}
+{{/bs-dropdown}}
 {{outlet}}
